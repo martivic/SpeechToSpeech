@@ -1,23 +1,23 @@
 ---
 declared-services:
-  speech-to-text-service-standard:
+  SpeechToTextMA:
     label: speech_to_text
-    plan: standard
-  language-translation-service:
-    label: language_translation
-    plan: standard
-  text-to-speech-service:
+    plan: lite
+  LanguageTranslatorMA:
+    label: language_translator
+    plan: lite
+  TextToSpeechMA:
     label: text_to_speech
-    plan: standard	
+    plan: lite	
 applications:
-- name: speech-to-nomotranslator
+- name: speechlanguagenow
   command: node app.js
   buildpack: sdk-for-nodejs
   path: .
   memory: 256m
   services:
-  - speech-to-text-service-standard
-  - language-translation-service
-  - text-to-speech-service
+  - SpeechToTextMA
+  - LanguageTranslatorMA
+  - TextToSpeechMA
   
   
